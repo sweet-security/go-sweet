@@ -1,4 +1,4 @@
-module github.com/sweet/go-sweet
+module github.com/sweet-security/go-sweet
 
 go 1.25
 
