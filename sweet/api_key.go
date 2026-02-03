@@ -21,3 +21,12 @@ func (s *ApiClient) CreateApiKey(description string, roles []string) (*ApiKey, e
 	result := resp.Result().(*ApiKey)
 	return result, nil
 }
+
+func (s *ApiClient) DeleteApiKey(apiKey string) error {
+	_, err := s.restyClient.R().
+		Delete("/v1/auth/key/" + apiKey)
+	if err != nil {
+		return err
+	}
+	return nil
+}
